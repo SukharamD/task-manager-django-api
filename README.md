@@ -34,6 +34,7 @@ It demonstrates clean API design using Django REST Framework (DRF) with PostgreS
 
 # Project Structure
 
+```
 task_manager/
 ├── config/
 ├── users/
@@ -42,6 +43,7 @@ task_manager/
 ├── requirements.txt
 ├── .env.example
 └── README.md
+```
 
 ---
 
@@ -49,17 +51,17 @@ task_manager/
 
 1. Clone the Repository
 
+```bash
 git clone <your-github-repository-url>
 cd task_manager
+```
 
 2. Create and Activate Virtual Environment
-
-python -m venv venv
-venv\Scripts\activate
+   python -m venv venv
+   venv\Scripts\activate
 
 3. Install Dependancies
-
-pip install -r requirements.txt
+   pip install -r requirements.txt
 
 ---
 
@@ -67,7 +69,8 @@ pip install -r requirements.txt
 
 # Create Database
 
-You can create the database using pgAdmin or SQL shell:
+### You can create the database using pgAdmin or SQL shell:
+
 CREATE DATABASE task_db;
 
 ---
@@ -76,28 +79,28 @@ CREATE DATABASE task_db;
 
 Create a .env file in the project root with the following values:
 
-DEBUG=True
-SECRET_KEY=your-secret-key
-DB_NAME=task_db
-DB_USER=postgres
-DB_PASSWORD=your_postgres_password
-DB_HOST=localhost
-DB_PORT=5432
+- DEBUG=True
+- SECRET_KEY=your-secret-key
+- DB_NAME=task_db
+- DB_USER=postgres
+- DB_PASSWORD=your_postgres_password
+- DB_HOST=localhost
+- DB_PORT=5432
 
 # Database Migrations
 
 Run the following commands to apply migrations:
 
-python manage.py makemigrations
-python manage.py migrate
+- python manage.py makemigrations
+- python manage.py migrate
 
 # Create Superuser (Admin Access)
 
-python manage.py createsuperuser
+- python manage.py createsuperuser
 
 # Run Development Server
 
-python manage.py runserver
+- python manage.py runserver
 
 The API will be available at:
 http://127.0.0.1:8000/
@@ -109,47 +112,62 @@ http://127.0.0.1:8000/
 ### Users
 
 1. Create User
-   POST /users/
-   {
-   "username": "ram",
-   "email": "ram@gmail.com"
-   }
+
+- POST /users/
+
+```
+{
+"username": "ram",
+"email": "ram@gmail.com"
+}
+```
 
 2. List Users
-   GET /users/
+
+- GET /users/
 
 ### Tasks
 
-Create Task
+- Create Task
+- POST /tasks/
 
-POST /tasks/
+```
 {
 "title": "First Task",
 "description": "Task description",
 "status": "Pending",
 "user_id": 1
 }
+```
 
 3. List Tasks
-   GET /tasks/
+
+- GET /tasks/
 
 4. Get Task Details
-   GET /tasks/{id}/
+
+- GET /tasks/{id}/
 
 5. Update Task
-   PUT /tasks/{id}/
-   {
-   "title": "Updated Task",
-   "description": "Updated description",
-   "status": "In Progress",
-   "user_id": 1
-   }
+
+- PUT /tasks/{id}/
+
+```
+{
+"title": "Updated Task",
+"description": "Updated description",
+"status": "In Progress",
+"user_id": 1
+}
+```
 
 6. Delete Task
-   DELETE /tasks/{id}/
+
+- DELETE /tasks/{id}/
 
 7. Filter Tasks by Status
-   GET /tasks/?status=Completed
+
+- GET /tasks/?status=Completed
 
 # Admin Panel
 
