@@ -57,17 +57,17 @@ cd task_manager
 ```
 
 2. Create and Activate Virtual Environment
-   python -m venv venv
-   venv\Scripts\activate
+- python -m venv venv
+- venv\Scripts\activate
 
 3. Install Dependancies
-   pip install -r requirements.txt
+- pip install -r requirements.txt
 
 ---
 
-## PostgreSQL Configuration
+# PostgreSQL Configuration
 
-# Create Database
+## Create Database
 
 ### You can create the database using pgAdmin or SQL shell:
 
