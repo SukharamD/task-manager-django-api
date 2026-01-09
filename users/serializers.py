@@ -3,6 +3,7 @@ from rest_framework import serializers
 import re
 
 class UserSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(required=True)
     email = serializers.EmailField(required=True)
 
     class Meta:
